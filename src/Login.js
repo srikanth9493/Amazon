@@ -17,7 +17,13 @@ function Login() {
         history.push("/");
         console.log("authencation", auth);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        if (error.code == "auth/invalid-email")
+          alert("Please Enter Valid Email");
+        else if (error.code == "auth/user-not-found")
+          alert("Please Create User Account");
+        else alert(error.code);
+      });
   };
 
   const register = (e) => {

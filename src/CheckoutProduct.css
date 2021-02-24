@@ -1,6 +1,13 @@
 .checkoutproduct {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   border-bottom: 2px solid wheat;
+  margin: 10px;
 }
 
 .checkoutproduct__detail {
@@ -8,6 +15,10 @@
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 20px;
+}
+.checkout__back {
+  /* border: 5px solid green; */
+  flex: 0.5;
 }
 
 .checkoutproduct__img {

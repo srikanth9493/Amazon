@@ -2,21 +2,24 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { actionTypes } from "./reducer";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
   console.log("User in Header", user);
   const name = user?.email.split("@")[0];
+  const history = useHistory();
 
   const handleSignin = () => {
     if (user) {
       auth.signOut();
     }
   };
-
+  let path = user ? "/checkout" : "/";
+  console.log("path", path);
   return (
     <div className="header">
       <Link to="/">
@@ -39,7 +42,8 @@ function Header() {
             </span>
           </div>
         </Link>
-        <div className="header__option">
+
+        <div className="header__option" onClick={() => history.push("/orders")}>
           <span className="headerOption_one">Orders</span>
           <span className="headerOption_two">Refunds</span>
         </div>
@@ -48,7 +52,7 @@ function Header() {
           <span className="headerOption_two">Prime</span>
         </div>
 
-        <Link to="/checkout">
+        <Link to={user ? "/checkout" : "/login"}>
           <div className="header__basket">
             <ShoppingBasketIcon></ShoppingBasketIcon>
             <span className="header__basket_count">{basket.length}</span>

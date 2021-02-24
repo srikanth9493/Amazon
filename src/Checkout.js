@@ -9,7 +9,7 @@ import CheckoutProduct from "./CheckoutProduct";
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
   console.log("Baset in CHeckout", basket);
-  const name = user.email.split("@")[0];
+  const name = user?.email.split("@")[0];
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -25,6 +25,7 @@ function Checkout() {
               desc={desc}
               image={image}
               price={price}
+              rating={rating}
             ></CheckoutProduct>
           ))
         ) : (

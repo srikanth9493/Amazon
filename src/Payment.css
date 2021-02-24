@@ -1,0 +1,41 @@
+.payment__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vw;
+  background-color: white;
+}
+.payment__address {
+  display: flex;
+  border: 1px solid black;
+}
+.payment__address__details {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+}
+.payment__products {
+  display: flex;
+  border: 1px solid black;
+  background-color: white;
+}
+.heading {
+  width: 250px;
+}
+.payment__card {
+  display: flex;
+}
+
+.payment__card__details {
+  flex: 0.5;
+  border: 1px solid green;
+  margin-top: 10px;
+}
+.payment__products__details {
+  flex: 0.5;
+}
+.payment__card__button {
+  width: 100%;
+  background-color: orange;
+  height: 30px;
+}

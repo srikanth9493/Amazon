@@ -14,22 +14,23 @@ function CheckoutProduct({ desc, price, image, rating, id }) {
     });
   };
   return (
-    <div className="checkoutproduct">
-      <div className="checkoutproduct__img">
-        <img src={image}></img>
-      </div>
-      <div className="checkoutproduct__detail">
-        <div className="checkoutproduct__detail__des">{desc}</div>
-        <div className="checkoutproduct__detail__price">
-          <bold>{price} INR</bold>
+    <div className="checkout__back">
+      <div className="checkoutproduct">
+        <div className="checkoutproduct__img">
+          <img src={image}></img>
         </div>
-        <div className="checkoutproduct__detail__button">
-          <Button className="product__button__body" onClick={removeProduct}>
-            {" "}
-            Remove From Basket
-          </Button>
+        <div className="checkoutproduct__detail">
+          <div className="checkoutproduct__detail__des">{desc}</div>
+          <div className="checkoutproduct__detail__price">
+            <bold>{price} INR</bold>
+          </div>
+          <div className="checkoutproduct__detail__button">
+            <Button className="product__button__body" onClick={removeProduct}>
+              Remove From Basket
+            </Button>
+          </div>
+          <div className="checkoutproduct__detail__rate"></div>
         </div>
-        <div className="checkoutproduct__detail__rate"></div>
       </div>
     </div>
   );
